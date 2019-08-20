@@ -11,7 +11,7 @@ $type = $_GET["type"];
 
 // exec($r);
 
-$im = imagecreatefrompng("images/reward.png");
+$im = imagecreatefrompng("py/reward.png");
 header('Content-Type: image/png');
 imagepng($im);
 imagedestroy($im);
