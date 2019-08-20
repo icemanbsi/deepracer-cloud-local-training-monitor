@@ -1,15 +1,16 @@
 <?php 
-header("Content-type: image/png");
+// header("Content-type: image/png");
 $type = $_GET["type"];
 // if($type == "reward"){
-	$graph = exec('python py/reward.py', $output);
+header('Location: py/reward.py'); 
+	// $graph = exec('python py/reward.py', $output);
 // }
 // else{
 
 // }
 
-if($output){
-	print $output;
+// if($output){
+	// print $output;
 	// foreach($output as $key=>$value){
 	//     if($key==1)
 	//         print chr(0x0D); //Newline feed after PNG declaration
@@ -17,4 +18,4 @@ if($output){
 	//         print "\n";
 	//     print $value;
 	// }
-}
+// }

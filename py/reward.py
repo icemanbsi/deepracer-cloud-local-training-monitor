@@ -1,7 +1,10 @@
+#!/usr/bin/python
+
 import math
 import time
 import numpy as np
 import pandas as pd
+import matplotlib
 import matplotlib.pyplot as plt
 from datetime import datetime
 # %matplotlib inline
@@ -11,6 +14,8 @@ from shapely.geometry import Point, Polygon
 from shapely.geometry.polygon import LinearRing, LineString
 
 from log_analysis import *
+
+matplotlib.use( 'Agg' )
 
 EPISODE_PER_ITER = 20
 fname = '/deepracer/logs/robomaker.log'
