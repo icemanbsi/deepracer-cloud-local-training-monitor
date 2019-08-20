@@ -14,7 +14,7 @@ from shapely.geometry.polygon import LinearRing, LineString
 from datetime import datetime
 
 
-EPISODE_PER_ITER = 40
+EPISODE_PER_ITER = 60
 
 def load_data(fname):
     data = []
