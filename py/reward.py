@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime
-%matplotlib inline
+# %matplotlib inline
 
 #Shapely Library
 from shapely.geometry import Point, Polygon
