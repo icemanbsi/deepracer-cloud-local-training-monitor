@@ -4,7 +4,8 @@
 # import time
 # import numpy as np
 # import pandas as pd
-# import matplotlib
+import matplotlib
+matplotlib.use('Agg')
 # import matplotlib.pyplot as plt
 # from datetime import datetime
 # # %matplotlib inline
@@ -15,7 +16,6 @@
 
 # from log_analysis import *
 
-# # matplotlib.use( 'Agg' )
 
 # EPISODE_PER_ITER = 20
 # fname = '/deepracer/logs/robomaker.log'
