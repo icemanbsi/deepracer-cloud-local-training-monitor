@@ -1,12 +1,12 @@
 <?php 
 header("Content-type: image/png");
 $type = $_GET["type"];
-if($type == "reward"){
+// if($type == "reward"){
 	$graph = exec('python py/reward.py', $output);
-}
-else{
+// }
+// else{
 
-}
+// }
 
 if($output){
 	foreach($output as $key=>$value){
