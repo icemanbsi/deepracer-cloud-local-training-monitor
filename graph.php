@@ -3,7 +3,7 @@
 $type = $_GET["type"];
 // if($type == "reward"){
 // header('Location: py/reward.py'); 
-	// $graph = exec('python py/reward.py');
+	$graph = exec('python py/reward.py');
 // }
 // else{
 
