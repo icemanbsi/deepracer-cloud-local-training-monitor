@@ -2,12 +2,19 @@
 // header("Content-type: image/png");
 $type = $_GET["type"];
 // if($type == "reward"){
-header('Location: py/reward.py'); 
-	// $graph = exec('python py/reward.py', $output);
+// header('Location: py/reward.py'); 
+	$graph = exec('python py/reward.py');
 // }
 // else{
 
 // }
+
+// exec($r);
+
+$im = imagecreatefrompng("images/reward.png");
+header('Content-Type: image/png');
+imagepng($im);
+imagedestroy($im);
 
 // if($output){
 	// print $output;

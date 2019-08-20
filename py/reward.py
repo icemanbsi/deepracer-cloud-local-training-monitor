@@ -15,7 +15,7 @@ from shapely.geometry.polygon import LinearRing, LineString
 
 from log_analysis import *
 
-matplotlib.use( 'Agg' )
+# matplotlib.use( 'Agg' )
 
 EPISODE_PER_ITER = 20
 fname = '/deepracer/logs/robomaker.log'
@@ -28,7 +28,7 @@ REWARD_THRESHOLD = 10
 # reward graph per episode
 min_episodes = np.min(df['episode'])
 max_episodes = np.max(df['episode'])
-print('Number of episodes = ', max_episodes)
+# print('Number of episodes = ', max_episodes)
 
 total_reward_per_episode = list()
 progress_per_episode = list()
@@ -129,3 +129,5 @@ ax = fig.add_subplot(414)
 ax.plot(np.arange(len(total_reward_per_episode)), total_reward_per_episode, '.')
 ax.set_ylabel('Total reward')
 ax.set_xlabel('Episode')
+
+plt.savefig('../images/reward.png')
