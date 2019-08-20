@@ -12,10 +12,10 @@ from shapely.geometry.polygon import LinearRing, LineString
 
 from log_analysis import *
 
-
-fname = '../../logs/robomaker.log'
+EPISODE_PER_ITER = 20
+fname = '/deepracer/logs/robomaker.log'
 data = load_data(fname)
-
+df = convert_to_pandas(data, EPISODE_PER_ITER)
 
 
 REWARD_THRESHOLD = 10
