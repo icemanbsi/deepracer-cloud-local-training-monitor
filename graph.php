@@ -10,7 +10,7 @@ $type = $_GET["type"];
 // }
 
 // exec($r);
-
+sleep(3);
 $im = imagecreatefrompng("reward.png");
 header('Content-Type: image/png');
 imagepng($im);
