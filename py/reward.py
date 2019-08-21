@@ -17,13 +17,13 @@ from shapely.geometry.polygon import LinearRing, LineString
 from log_analysis import *
 
 
-EPISODE_PER_ITER = 60
+EPISODE_PER_ITER = 40
 fname = '/deepracer/logs/robomaker.log'
 data = load_data(fname)
 df = convert_to_pandas(data, EPISODE_PER_ITER)
 
 
-REWARD_THRESHOLD = 10
+REWARD_THRESHOLD = 50
 
 # reward graph per episode
 min_episodes = np.min(df['episode'])
