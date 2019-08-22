@@ -84,8 +84,8 @@ if len(buffer_raw) > 0:
             count += 1
     count_progress_per_iteration.append(count * 100 / EPISODE_PER_ITER)
         
-fig = plt.figure(figsize=(8,20))
-ax = fig.add_subplot(411)
+fig = plt.figure(figsize=(8,10))
+ax = fig.add_subplot(211)
 ax.plot(np.arange(len(average_reward_per_iteration)), average_reward_per_iteration, marker='.', linewidth=1, markersize=5)
 # ax.plot(np.arange(len(max_reward_per_iteration)), max_reward_per_iteration, marker='.', linewidth=1, markersize=5, color='green')
 ax.set_title('Rewards per Iteration')
@@ -98,7 +98,7 @@ for rr in range(len(average_reward_per_iteration)):
 
 plt.grid(True)
 
-ax = fig.add_subplot(412)
+ax = fig.add_subplot(212)
 ax.plot(np.arange(len(avg_progress_per_iteration)), avg_progress_per_iteration, marker='.', linewidth=1, markersize=5)
 ax.plot(np.arange(len(max_progress_per_iteration)), max_progress_per_iteration, marker='.', linewidth=1, markersize=5, color='green')
 ax.plot(np.arange(len(count_progress_per_iteration)), count_progress_per_iteration, marker='.', linewidth=1, markersize=5, color='purple')
