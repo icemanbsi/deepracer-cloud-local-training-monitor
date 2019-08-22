@@ -17,7 +17,7 @@ from shapely.geometry.polygon import LinearRing, LineString
 from log_analysis import *
 
 
-EPISODE_PER_ITER = 40
+EPISODE_PER_ITER = 20
 fname = '/deepracer/logs/robomaker.log'
 data = load_data(fname)
 df = convert_to_pandas(data, EPISODE_PER_ITER)
