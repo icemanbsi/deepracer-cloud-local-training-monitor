@@ -258,3 +258,33 @@ def plot_grid_world(episode_df, inner, outer, scale=10.0, plot=True):
         #plt.savefig('grid.png')
 
     return lap_time, average_throttle, stats
+
+
+def load_sagemaker_data(fname):
+    data = []
+    with open(fname, 'r') as f:
+        for line in f.readlines():
+            if "Policy training>" in line:
+                parts = line.split("Policy training>")[1].split('\t')[0].split(",")
+                data.append(",".join(parts))
+    return data
+
+def convert_sagemaker_to_pandas(data, wpts=None):
+    df_list = list()
+    iteration = 1
+    for d in data[:]:
+        parts = d.rstrip().split(",")
+        surrogate_loss = float(parts[0].split("Surrogate loss=")[1])
+        kl_divergence = float(parts[1].split("KL divergence=")[1])
+        entropy = float(parts[2].split("Entropy=")[1])
+        epoch = int(parts[3].split("training epoch=")[1])
+            
+        df_list.append((iteration, surrogate_loss, kl_divergence, entropy, epoch))
+        
+        if epoch == 9:
+            iteration += 1
+
+    header = ['iteration', 'surrogate_loss', 'kl_divergence', 'entropy', 'epoch']
+    
+    df = pd.DataFrame(df_list, columns=header)
+    return df

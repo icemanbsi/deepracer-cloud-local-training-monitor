@@ -113,21 +113,4 @@ for rr in range(len(average_reward_per_iteration)):
 
 plt.grid(True)
 
-ax = fig.add_subplot(413)
-ax.plot(np.arange(len(deviation_reward_per_iteration)), deviation_reward_per_iteration, marker='.', linewidth=1, markersize=5)
-
-ax.set_ylabel('Dev of reward')
-ax.set_xlabel('Iteration')
-plt.grid(True)
-
-for rr in range(len(average_reward_per_iteration)):
-    if average_reward_per_iteration[rr] >= REWARD_THRESHOLD:
-        ax.plot(rr, deviation_reward_per_iteration[rr], 'r.')
-
-
-ax = fig.add_subplot(414)
-ax.plot(np.arange(len(total_reward_per_episode)), total_reward_per_episode, '.')
-ax.set_ylabel('Total reward')
-ax.set_xlabel('Episode')
-
 plt.savefig('image.png')
