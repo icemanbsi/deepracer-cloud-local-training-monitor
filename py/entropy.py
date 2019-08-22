@@ -18,7 +18,7 @@ from log_analysis import *
 
 
 EPISODE_PER_ITER = 20
-sname = '../../logs/sagemaker.log'
+sname = '/deepracer/logs/sagemaker.log'
 sdata = load_sagemaker_data(sname)
 sdf = convert_sagemaker_to_pandas(sdata, EPISODE_PER_ITER)
 
