@@ -32,7 +32,6 @@ REWARD_THRESHOLD = 10
 # reward graph per episode
 min_episodes = np.min(df['episode'])
 max_episodes = np.max(df['episode'])
-print('Number of episodes = ', max_episodes)
 
 total_reward_per_episode = list()
 progress_per_episode = list()
