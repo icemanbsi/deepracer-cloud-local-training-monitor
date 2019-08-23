@@ -3,9 +3,7 @@
 		
 	</head>
 	<body>
-		<h2>Reward Distribution</h2>
-		<img src="graph.php?type=reward"/>
-		<h2>Entropy Distribution</h2>
-		<img src="graph.php?type=entropy"/>
+		<h2>Training Progress</h2>
+		<img src="graph.php?type=Complete"/>
 	</body>
 </html>

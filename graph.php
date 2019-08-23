@@ -11,6 +11,11 @@ else if($type == "entropy"){
 	$graph = exec('python py/entropy.py');
 	$filename = "entropy.png";
 }
+else if($type == "complete"){
+// header('Location: py/reward.py'); 
+	$graph = exec('python py/complete.py');
+	$filename = "complete.png";
+}
 else{
 
 }
