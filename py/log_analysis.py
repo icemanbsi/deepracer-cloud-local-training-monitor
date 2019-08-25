@@ -271,7 +271,7 @@ def load_sagemaker_data(fname):
 
 def convert_sagemaker_to_pandas(data, wpts=None):
     df_list = list()
-    iteration = 1
+    iteration = 0
     for d in data[:]:
         parts = d.rstrip().split(",")
         surrogate_loss = float(parts[0].split("Surrogate loss=")[1])
