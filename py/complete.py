@@ -111,7 +111,6 @@ ln1 = ax.plot(np.arange(len(average_reward_per_iteration)),
 ax.set_title('Rewards per Iteration')
 ax.set_ylabel('Mean reward')
 ax.set_xlabel('Iteration')
-plt.grid(True)
 
 ax2 = ax.twinx()
 ln2 = ax2.plot(np.arange(len(avg_progress_per_iteration)), 
@@ -134,6 +133,7 @@ ln4 = ax2.plot(np.arange(len(count_progress_per_iteration)),
 ax2.set_title('Progress per Iteration')
 ax2.set_ylabel('Progress / Entropy')
 ax2.set_ylim(-10, 100)
+plt.grid(True)
 
 
 ax3 = ax.twinx()
