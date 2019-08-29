@@ -132,7 +132,7 @@ ln4 = ax2.plot(np.arange(len(count_progress_per_iteration)),
          color='pink')
 ax2.set_title('Progress per Iteration')
 ax2.set_ylabel('Progress / Entropy')
-ax2.set_ylim(-10, 100)
+ax2.set_ylim(-1, 100)
 plt.grid(True)
 
 
@@ -144,7 +144,7 @@ ln5 = ax3.plot(np.arange(len(entropy_list)),
         markersize=5,
         color='red')
 # ax3.set_ylabel('entropy')
-ax3.set_ylim(0, 4)
+ax3.set_ylim(0, 3.5)
 
 
 lns = ln1+ln2+ln3+ln4+ln5
