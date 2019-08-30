@@ -17,7 +17,7 @@ from shapely.geometry.polygon import LinearRing, LineString
 from log_analysis import *
 
 
-EPISODE_PER_ITER = 40
+EPISODE_PER_ITER = 60
 fname = '/deepracer/logs/robomaker.log'
 data = load_data(fname)
 df = convert_to_pandas(data, EPISODE_PER_ITER)
@@ -111,6 +111,7 @@ ln1 = ax.plot(np.arange(len(average_reward_per_iteration)),
 ax.set_title('Rewards per Iteration')
 ax.set_ylabel('Mean reward')
 ax.set_xlabel('Iteration')
+plt.grid(True)
 
 ax2 = ax.twinx()
 ln2 = ax2.plot(np.arange(len(avg_progress_per_iteration)), 
@@ -145,6 +146,7 @@ ln5 = ax3.plot(np.arange(len(entropy_list)),
         color='red')
 # ax3.set_ylabel('entropy')
 ax3.set_ylim(0, 3.5)
+plt.grid(True)
 
 
 lns = ln1+ln2+ln3+ln4+ln5
