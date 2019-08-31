@@ -8,7 +8,10 @@
 
 		<div class="container-fluid">
 		  <div class="row">
-			<?php include("includes/sidebar.php"); ?>		    
+			<?php 
+				$activeMenu = "dashboard";
+				include("includes/sidebar.php"); 
+			?>
 
 		    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 
