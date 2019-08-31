@@ -17,7 +17,7 @@
 		      </div>
 
 		      <div>
-		      	<img alt="lap" src="graph.php?type=lap"/>
+		      	<img alt="lap" src="graph.php?type=lap" style="width: 100%;"/>
 		      </div>
 
 		    </main>

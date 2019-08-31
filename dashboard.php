@@ -17,7 +17,7 @@
 		      </div>
 
 		      <div>
-		      	<img alt="complete graph" src="graph.php?type=complete"/>
+		      	<img alt="complete graph" src="graph.php?type=complete" style="width: 100%;"/>
 		      </div>
 
 		    </main>

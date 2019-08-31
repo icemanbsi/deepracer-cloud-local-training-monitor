@@ -18,10 +18,16 @@
 
 		      <div>
 		      	<form>
+		      	  <h3>Training Settings</h3>
 				  <div class="form-group">
 				    <label for="txtEpisodes">Number of Episodes Between Training</label>
 				    <input type="text" class="form-control" id="txtEpisodes"/>
 				  </div>
+				  <div class="form-group">
+				    <label for="txtTrack">Track</label>
+				    <input type="text" class="form-control" id="txtTrack"/>
+				  </div>
+				  <h3>Log Settings</h3>
 				  <div class="form-group">
 				    <label for="txtRobomakerPath">Robomaker Log Path</label>
 				    <input type="text" class="form-control" id="txtRobomakerPath"/>
