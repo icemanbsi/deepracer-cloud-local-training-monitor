@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+import json
 import math
 import time
 import numpy as np
@@ -16,13 +16,24 @@ from shapely.geometry.polygon import LinearRing, LineString
 
 from log_analysis import *
 
+config = None
+with open('config.txt') as json_file:
+    config = json.load(json_file)
 
 EPISODE_PER_ITER = 60
 fname = '/deepracer/logs/robomaker.log'
+sname = '/deepracer/logs/sagemaker.log'
+
+if config is not None:
+    EPISODE_PER_ITER = config['num_episodes_between_training']
+    fname = config['robomaker_log_path']
+    sname = config['sagemaker_log_path']
+
+
+
 data = load_data(fname)
 df = convert_to_pandas(data, EPISODE_PER_ITER)
 
-sname = '/deepracer/logs/sagemaker.log'
 sdata = load_sagemaker_data(sname)
 sdf = convert_sagemaker_to_pandas(sdata, EPISODE_PER_ITER)
 

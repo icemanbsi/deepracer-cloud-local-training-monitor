@@ -1,0 +1,5 @@
+{
+	"num_episodes_between_training": 40,
+	"robomaker_log_path": "/deepracer/logs/robomaker.log",
+	"sagemaker_log_path": "/deepracer/logs/sagemaker.log"
+}
