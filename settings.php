@@ -1,3 +1,10 @@
+<?php
+$configFile = 'config.txt';
+$handle = fopen($configFile, 'r') or die('Cannot open file:  '.$configFile);
+$data_string = fread($handle,filesize($configFile));
+$data_json = json_decode($data_string, true);	
+fclose($handle);
+?>
 <html>
 	<head>
 		<title>DeepRacer - Local Training Monitor</title>
@@ -20,26 +27,26 @@
 		      </div>
 
 		      <div>
-		      	<form>
+		      	<form action="write-settings.php" method="POST">
 		      	  <h3>Training Settings</h3>
 				  <div class="form-group">
 				    <label for="txtEpisodes">Number of Episodes Between Training</label>
-				    <input type="text" class="form-control" id="txtEpisodes"/>
+				    <input type="text" class="form-control" id="txtEpisodes" name="num_episodes_between_training" value="<?php echo $data_json["num_episodes_between_training"]; ?>"/>
 				  </div>
-				  <div class="form-group">
-				    <label for="txtTrack">Track</label>
-				    <input type="text" class="form-control" id="txtTrack"/>
-				  </div>
+				  <!-- <div class="form-group"> -->
+				    <!-- <label for="txtTrack">Track</label> -->
+				    <!-- <input type="text" class="form-control" id="txtTrack"/> -->
+				  <!-- </div> -->
 				  <h3>Log Settings</h3>
 				  <div class="form-group">
 				    <label for="txtRobomakerPath">Robomaker Log Path</label>
-				    <input type="text" class="form-control" id="txtRobomakerPath"/>
+				    <input type="text" class="form-control" id="txtRobomakerPath" name="robomaker_log_path" value="<?php echo $data_json["robomaker_log_path"]; ?>"/>
 				  </div>
 				  <div class="form-group">
 				    <label for="txtSagemakerPath">Sagemaker Log Path</label>
-				    <input type="text" class="form-control" id="txtSagemakerPath"/>
+				    <input type="text" class="form-control" id="txtSagemakerPath" name="sagemaker_log_path" value="<?php echo $data_json["sagemaker_log_path"]; ?>"/>
 				  </div>
-				  <button type="submit" class="btn btn-primary">Submit</button>
+				  <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 				</form>
 		      </div>
 
