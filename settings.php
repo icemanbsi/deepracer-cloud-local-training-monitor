@@ -33,6 +33,10 @@ fclose($handle);
 				    <label for="txtEpisodes">Number of Episodes Between Training</label>
 				    <input type="text" class="form-control" id="txtEpisodes" name="num_episodes_between_training" value="<?php echo $data_json["num_episodes_between_training"]; ?>"/>
 				  </div>
+				  <div class="form-group">
+				    <label for="txtEpoch">Number of Epoch Training</label>
+				    <input type="text" class="form-control" id="txtEpoch" name="num_epoch" value="<?php echo $data_json["num_epoch"]; ?>"/>
+				  </div>
 				  <!-- <div class="form-group"> -->
 				    <!-- <label for="txtTrack">Track</label> -->
 				    <!-- <input type="text" class="form-control" id="txtTrack"/> -->

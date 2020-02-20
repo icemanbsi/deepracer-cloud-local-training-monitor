@@ -269,7 +269,7 @@ def load_sagemaker_data(fname):
                 data.append(",".join(parts))
     return data
 
-def convert_sagemaker_to_pandas(data, wpts=None):
+def convert_sagemaker_to_pandas(data, num_epoch=10):
     df_list = list()
     iteration = 0
     for d in data[:]:
@@ -281,7 +281,7 @@ def convert_sagemaker_to_pandas(data, wpts=None):
             
         df_list.append((iteration, surrogate_loss, kl_divergence, entropy, epoch))
         
-        if epoch == 9:
+        if epoch == num_epoch-1:
             iteration += 1
 
     header = ['iteration', 'surrogate_loss', 'kl_divergence', 'entropy', 'epoch']

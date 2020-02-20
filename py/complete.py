@@ -21,11 +21,13 @@ with open('config.txt') as json_file:
     config = json.load(json_file)
 
 EPISODE_PER_ITER = 60
+NUM_EPOCH = 10
 fname = '/deepracer/logs/robomaker.log'
 sname = '/deepracer/logs/sagemaker.log'
 
 if config is not None:
     EPISODE_PER_ITER = config['num_episodes_between_training']
+    NUM_EPOCH = config['num_epoch']
     fname = config['robomaker_log_path']
     sname = config['sagemaker_log_path']
 
@@ -35,7 +37,7 @@ data = load_data(fname)
 df = convert_to_pandas(data, EPISODE_PER_ITER)
 
 sdata = load_sagemaker_data(sname)
-sdf = convert_sagemaker_to_pandas(sdata, EPISODE_PER_ITER)
+sdf = convert_sagemaker_to_pandas(sdata, NUM_EPOCH)
 
 
 REWARD_THRESHOLD = 10
