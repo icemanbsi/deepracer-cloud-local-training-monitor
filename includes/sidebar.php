@@ -8,6 +8,12 @@
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link <?php echo($activeMenu == "training" ? "active" : ""); ?>" href="training.php">
+          <span data-feather="training"></span>
+          Training
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link <?php echo($activeMenu == "lap" ? "active" : ""); ?>" href="lap-analysis.php">
           <span data-feather="lap-analysis"></span>
           Lap Analysis

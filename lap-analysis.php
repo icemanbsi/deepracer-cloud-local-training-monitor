@@ -20,7 +20,11 @@
 		      </div>
 
 		      <div>
-		      	<img alt="lap" src="graph.php?type=lap" style="width: 100%;"/>
+				  <?php
+					$command = escapeshellcmd('python py/lap_analysis.py');
+					$output = shell_exec($command);
+					echo $output;				  
+				  ?>
 		      </div>
 
 		    </main>
