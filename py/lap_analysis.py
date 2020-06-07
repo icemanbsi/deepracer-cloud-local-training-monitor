@@ -16,7 +16,7 @@ from shapely.geometry.polygon import LinearRing, LineString
 
 import track_utils as tu
 import log_analysis as la
-import cw_utils as cw
+# import cw_utils as cw
 
 config = None
 with open('config.txt') as json_file:
