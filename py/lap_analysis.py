@@ -8,6 +8,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from datetime import datetime
+import os
 # %matplotlib inline
 
 #Shapely Library
@@ -35,7 +36,7 @@ if config is not None:
     sname = config['sagemaker_log_path']
     track_name = config['track_name']
 
-l_center_line, l_inner_border, l_outer_border, road_poly = tu.load_track(track_name)
+l_center_line, l_inner_border, l_outer_border, road_poly = tu.load_track(track_name, absolute_path=os.getcwd())
 
 data = la.load_data(fname)
 df = la.convert_to_pandas(data, episodes_per_iteration=EPISODES_PER_ITERATION)
